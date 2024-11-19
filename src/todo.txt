@@ -1,0 +1,3 @@
+- move map creation and constants out of tiledmapscene file? depending on how layer on top gets implemented
+- create map with Tiled
+- fix your git and put this in a repo
