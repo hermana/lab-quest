@@ -1,12 +1,18 @@
 
+import { Player } from './objects/player';
 
 export default class TiledMapScene extends Phaser.Scene {
+
     constructor() {
         super("SceneMain");
     }
+
     preload() {
-      this.load.image("tiles", "src/assets/lab_quest_level_one.png")
+      this.load.baseURL = "src/assets/";
+      this.load.image("tiles", "lab_quest_level_one.png")
+	  this.load.image('player', 'sprites/char_walk_right.gif');
     }
+
     create() {       
      
     //TODO: move to config file or something 
@@ -29,8 +35,13 @@ export default class TiledMapScene extends Phaser.Scene {
     map.addTilesetImage("tiles");
     const layer = map.createLayer(0, "tiles", 0, 0);
 
+    //TODO: move out constants
+    //TODO: can I make player a private property of the class? How to join the game?
+    //this.player = this.add.sprite(10, 5, 'player');
+    this.player = new Player(this, 10, 5)
+
     }
     update() {
-
+        this.player.update()
     }
 }

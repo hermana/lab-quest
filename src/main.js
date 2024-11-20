@@ -1,3 +1,4 @@
+//TODO: write the whole thing in Typescript
 import Phaser from 'phaser'
 import TiledMapScene from './TiledMapScene'
 
